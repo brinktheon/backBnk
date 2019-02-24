@@ -1,0 +1,10 @@
+ALTER TABLE users ADD COLUMN email varchar(100)
+
+CREATE SEQUENCE seq_user
+    START WITH 2
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER TABLE users ALTER COLUMN id SET DEFAULT nextval('seq_user');
